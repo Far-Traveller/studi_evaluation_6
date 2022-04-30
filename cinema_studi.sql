@@ -10,8 +10,6 @@ SHOW databases;
 --Création un admin et un user pour la BDD (seulement pour des tests, sinon créer mot de passe plus sécurisé)
 CREATE USER 'Admin'@'localhost' IDENTIFIED BY 'admin-test';
 GRANT ALL PRIVILEGES ON * . * TO 'Admin'@'localhost';
-CREATE USER 'User'@'localhost' IDENTIFIED BY 'user-test';
-GRANT ALL PRIVILEGES ON * . * TO 'User'@'localhost';
 
 --Se connecter à la BDD du cinéma
 USE cinema_studi;
