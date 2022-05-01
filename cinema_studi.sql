@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS user
   email VARCHAR(250) NOT NULL UNIQUE,
   firstname VARCHAR(50) NOT NULL,
   lastname VARCHAR(50) NOT NULL,
+  password VARCHAR(100) NOT NULL,
   role VARCHAR(10),
   cinema_id INT,
   FOREIGN KEY(cinema_id) REFERENCES cinema(id)
@@ -138,23 +139,23 @@ VALUES
 ('Matrix 2', '02:53:00');
 
 --Création des administrateurs des différents cinémas
-INSERT INTO user (email, firstname, lastname, role, cinema_id)
+INSERT INTO user (email, firstname, lastname, password, role, cinema_id)
 VALUES
-('bilbonsacquet@test.fr', 'Bilbon', 'Sacquet', 1),
-('martymcfly@test.fr', 'Marty', 'Mcfly', 'Admin', 2),
-('gandalflegris@test.fr', 'Gandalf', 'Le Gris', 'Admin', 3),
-('anakinskywalker@test.fr', 'Anakin', 'Skywalker', 'Admin', 4),
-('chucknorris@test.fr', 'Chuck', 'Norris', 'Admin', 5),
-('mattsmith@test.fr', 'Matt', 'Smith', 'Admin', 6);
+('bilbonsacquet@test.fr', 'Bilbon', 'Sacquet', '$2y$13$OoGnL.dHpw1SEneS0pXmsuGEGSpOmH4WNbgZ3LkuHurIZSCEPI8xi', 'Admin' 1),
+('martymcfly@test.fr', 'Marty', 'Mcfly', '$2y$13$OoGnL.dHpw1SEneS0pXmsuGEGSpOmH4WNbgZ3LkuHurIZSCEPI8xi', 'Admin', 2),
+('gandalflegris@test.fr', 'Gandalf', 'Le Gris', '$2y$13$fT572qAsEMBWEamtTK6FbeR38laZLqjHt3PnStA15jatVgRWzFbLW', 'Admin', 3),
+('anakinskywalker@test.fr', 'Anakin', 'Skywalker', '$2y$13$ky/P6LmPLcYNujERUZtPzuI0d41CffJeJwdZUqLvXVqREddCyw6uq', 'Admin', 4),
+('chucknorris@test.fr', 'Chuck', 'Norris', '$2y$13$6RyAtx6qtpbisJ8tfrq0Luoxddq5/bHVhySBhagxV3jSzGR1R9xtq', 'Admin', 5),
+('mattsmith@test.fr', 'Matt', 'Smith', '$2y$13$/e3DMrrfm85zDZ5Mhcj4vuNdKWH6doyo80UnV8zN6gBFuPXd/9USa', 'Admin', 6);
 
 --Création des utilisateurs lambdas
-INSERT INTO user (email, firstname, lastname)
+INSERT INTO user (email, firstname, lastname, password)
 VALUES
-('themaster@test.fr', 'The', 'Master'),
-('chandlerbing@test.fr', 'Chandler', 'Bing'),
-('jessicaday@test.fr', 'Jessica', 'Day'),
-('barneystinson@test.fr', 'Barney', 'Stinson'),
-('donaldduck@test.fr', 'Donald', 'Duck');
+('themaster@test.fr', 'The', 'Master', '$2y$13$/e3DMrrfm85zDZ5Mhcj4vuNdKWH6doyo80UnV8zN6gBFuPXd/9USa'),
+('chandlerbing@test.fr', 'Chandler', 'Bing', '$2y$13$OoGnL.dHpw1SEneS0pXmsuGEGSpOmH4WNbgZ3LkuHurIZSCEPI8xi'),
+('jessicaday@test.fr', 'Jessica', 'Day', '$2y$13$fT572qAsEMBWEamtTK6FbeR38laZLqjHt3PnStA15jatVgRWzFbLW'),
+('barneystinson@test.fr', 'Barney', 'Stinson', '$2y$13$fT572qAsEMBWEamtTK6FbeR38laZLqjHt3PnStA15jatVgRWzFbLW'),
+('donaldduck@test.fr', 'Donald', 'Duck', '$2y$13$ky/P6LmPLcYNujERUZtPzuI0d41CffJeJwdZUqLvXVqREddCyw6uq');
 
 INSERT INTO price (name, price)
 VALUES
